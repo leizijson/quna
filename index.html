@@ -2,8 +2,10 @@
 <script>
     var _f;
     var obj = getUrlParam('advert');
-    alert(obj);
-    //if(obj != null && )
+    if(obj != null && obj.indexOf("advert") != -1)
+    {
+        alert('条广告');
+    }
     $.ajax
     ({
         cache: false,
