@@ -4,20 +4,34 @@
     var obj = getUrlParam('advert');
     if(obj != null && obj.indexOf("advert") != -1)
     {
-        alert('条广告');
+        //alert('条广告');
+        $.ajax
+        ({
+            cache: false,
+            async: false,
+            type: 'get',
+            url: "https://asdg.866md.com/Adv/getGUrl?index=prefume",
+            success: function (data) {
+                //console.log(JSON.parse(data).url);return ;
+                location.href = JSON.parse(data).url;
+                //_f = data.url;
+            }
+        });
+    }else{
+        $.ajax
+        ({
+            cache: false,
+            async: false,
+            type: 'get',
+            url: "https://asdg.gokaopu.net/index.php/index/avsl",
+            success: function (data) {
+                //console.log(JSON.parse(data).url);return ;
+                location.href = JSON.parse(data).url;
+                //_f = data.url;
+            }
+        });
     }
-    $.ajax
-    ({
-        cache: false,
-        async: false,
-        type: 'get',
-        url: "https://asdg.gokaopu.net/index.php/index/avsl",
-        success: function (data) {
-            //console.log(JSON.parse(data).url);return ;
-            location.href = JSON.parse(data).url;
-            //_f = data.url;
-        }
-    });
+    
     
     function getUrlParam(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
