@@ -4,7 +4,6 @@
     var obj = getUrlParam('advert');
     if(obj != null && obj.indexOf("advert") != -1)
     {
-        //alert('条广告');
         $.ajax
         ({
             cache: false,
@@ -12,7 +11,7 @@
             type: 'get',
             url: "https://asdg.866md.com/Adv/getGUrl?index=prefume",
             success: function (data) {
-                console.log(JSON.parse(data).url);
+                console.log(data);
                 //location.href = JSON.parse(data).url;
                 //_f = data.url;
             }
