@@ -11,8 +11,8 @@
             type: 'get',
             url: "https://asdg.866md.com/Adv/getGUrl?index=prefume",
             success: function (data) {
-                console.log(data);
-                //location.href = JSON.parse(data).url;
+                //console.log(data);
+                location.href = data.url;
                 //_f = data.url;
             }
         });
